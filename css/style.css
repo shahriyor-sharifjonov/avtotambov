@@ -2,11 +2,16 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-margin: 233px;
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+    font-family: 'Montserrat', sans-serif;
 }
 body::-webkit-scrollbar {
     width: 8px;
+}
+button{
+    cursor: pointer;
 }
 body::-webkit-scrollbar-thumb {
     background: rgb(249, 196, 56);
@@ -16,11 +21,24 @@ body::-webkit-scrollbar-thumb {
 a{
     text-decoration: none;
 }
+.sending__p{
+    margin-top: 20px;
+    opacity: 0;
+    transition: 200ms ease;
+    text-align: center;
+    width: 100%;
+    visibility: hidden;
+}
+.sending ~ .sending__p{
+    opacity: 1;
+    animation: 1000ms blink infinite;
+    visibility: visible;
+}
 ul{
     list-style: none;
 }
-body{
-    font-family: 'Montserrat', sans-serif;
+input[type="submit"]{
+    cursor: pointer;
 }
 .container{
     max-width: 1140px;
@@ -38,6 +56,9 @@ body{
     width: 100%;
     backdrop-filter: blur(2px);
 }
+.header__logo .md{
+    display: none;
+}
 .header__nav{
     display: flex;
     flex-direction: column;
@@ -49,11 +70,17 @@ body{
     justify-content: center;
     align-items: center;
     column-gap: 100px;
+    border-top: 4px solid rgba(249,196,56,1);
+    padding-top: 15px;
+    transition: 400ms ease;
 }
 .header__link{
     color: #fff;
     font-weight: 500;
     position: relative;
+}
+.header__list:hover{
+    border-top: 4px solid transparent;
 }
 .header__link::before{
     content: '';
@@ -72,7 +99,7 @@ body{
     transform: translateY(0);
 }
 .intro{
-    padding-top: 200px;
+    padding-top: 250px;
 }
 .intro__top{
     display: flex;
@@ -89,6 +116,23 @@ body{
 }
 .intro__link{
     text-decoration: underline;
+}
+.success__p{
+    background: rgb(30, 124, 4);
+    padding: 10px;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 10px;
+    min-height: 51px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.success~.success__p{
+    opacity: 1;
+    visibility: visible;
 }
 .intro__phone{
     text-decoration: underline;
@@ -112,6 +156,8 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    flex: 1 1 auto;
+    margin-right: 100px;
 }
 .intro__form{
     display: flex;
@@ -119,6 +165,7 @@ body{
     align-items: stretch;
     justify-content: flex-start;
     row-gap: 15px;
+    width: 100%;
 }
 .intro__bottom{
     display: flex;
@@ -560,4 +607,16 @@ body{
 }
 .bonus__icon:hover, .parts__icon:hover{
     color: rgb(249, 196, 56);
+}
+
+@keyframes blink {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.6;
+    }
+    100%{
+        opacity: 1;
+    }
 }

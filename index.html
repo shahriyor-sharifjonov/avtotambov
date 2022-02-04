@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="css/style.css">
@@ -14,7 +15,10 @@
     <header class="header">
         <nav class="header__nav container">
             <div class="header__top">
-                <a href="index.html" class="header__logo"><img src="img/logo.png" alt=""></a>
+                <a href="index.html" class="header__logo">
+                    <img src="img/logo.png" alt="">
+                    <img src="img/logo-md.png" alt="" class="md">
+                </a>
             </div>
             <div class="header__bottom">
                 <ul class="header__list">
@@ -43,13 +47,16 @@
             <div class="intro__bottom container">
                 <div class="intro__left">
                     <h2 class="intro__subtitle">СДЕЛАТЬ ЗАКАЗ</h2>
-                    <form action="" class="intro__form">
-                        <input type="text" class="intro__input" placeholder="VIN-КОД" draggable="false">
-                        <input type="text" class="intro__input" placeholder="Марка автомобиля" draggable="false">
-                        <input type="text" class="intro__input" placeholder="Ваш номер телефона" draggable="false">
-                        <input type="text" class="intro__input" placeholder="Комментарий к заказу" draggable="false">
-                        <button type="submit" class="intro__btn">ОСТАВИТЬ ЗАЯВКУ</button>
+                    <form action="#" class="intro__form" method="post" id="form">
+                        <input type="text" class="popup__input" placeholder="VIN-CODE*" name="vin" required autocomplete="off">
+                        <input type="text" class="popup__input" placeholder="Марка автомобиля*" name="marka" required autocomplete="off">
+                        <input type="text" class="popup__input" placeholder="Ваше имя*" name="name" required autocomplete="off">
+                        <input type="text" class="popup__input" placeholder="Номер телефона*" name="phone" required autocomplete="off">
+                        <input type="text" class="popup__input" placeholder="Комменарий к звонку [желамое время звонка и т.п]"  name="comment" autocomplete="off">
+                        <button type="submit" class="intro__btn" name="submit">ОСТАВИТЬ ЗАЯВКУ</button>
                     </form>
+                    <p class="success__p">Данные отправлены!</p>
+                    <p class="sending__p">Отправляем ...</p>
                 </div>
                 <div class="intro__right">
                     <img src="img/intro-img.png" alt="" class="intro__img">
@@ -138,8 +145,7 @@
                     <div class="delivery__content-body container">
                         <div class="delivery__items1">
                             <div class="delivery__item">
-                                <svg
-                                 id="nc_icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" xml:space="preserve" class="delivery__icon
+                                <svg id="nc_icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" xml:space="preserve" class="delivery__icon
                                 brz-icon-svg" data-type="glyph" data-name="money-bag"><g class="nc-icon-wrapper" fill="currentColor"><path data-color="color-2" fill="currentColor" d="M17.9,0.5C17.7,0.2,17.3,0,17,0H7C6.7,0,6.3,0.2,6.1,0.5C6,0.8,6,1.1,6.1,1.4l2,4 C8.3,5.8,8.6,6,9,6h2V4h2v2h2c0.4,0,0.7-0.2,0.9-0.6l2-4C18,1.1,18,0.8,17.9,0.5z"></path> <path fill="currentColor" d="M20.4,16.7l-4-8.2C16.2,8.2,15.9,8,15.5,8h-7C8.1,8,7.8,8.2,7.6,8.6l-4,8.2c-0.8,1.9-0.4,4.1,1.1,5.7 c1,1,2.5,1.6,3.9,1.6l6.8,0c1.5,0,2.9-0.5,3.9-1.6C20.8,20.9,21.2,18.7,20.4,16.7z"></path></g>
                                 </svg>
                                 <p class="delivery__subtitle">Низкие цены</p>
@@ -165,7 +171,6 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </section>
@@ -210,14 +215,16 @@
                 <a href="#!" class="intro__phone">+7 (980) 678-56-05</a>
             </div>
             <h2 class="popup__title">ОСТАВЬТЕ ВАШУ ЗАЯВКУ <br> МЫ ВАМ ПЕРЕЗВОНИМ!</h2>
-            <form action="" class="popup__form">
-                <input type="text" class="popup__input" placeholder="VIN-CODE*">
-                <input type="text" class="popup__input" placeholder="Марка автомобиля*">
-                <input type="text" class="popup__input" placeholder="Ваше имя*">
-                <input type="text" class="popup__input" placeholder="Номер телефона*">
-                <input type="text" class="popup__input" placeholder="Комменарий к звонку [желамое время звонка и т.п] (не обязательно)">
-                <button class="popup__btn" type="submit">ОСТАВИТЬ ЗАЯВКУ</button>
+            <form action="#" class="popup__form" method="post" id="popup__form">
+                <input type="text" class="popup__input" placeholder="VIN-CODE*" name="vin" required autocomplete="off">
+                <input type="text" class="popup__input" placeholder="Марка автомобиля*" name="marka" required autocomplete="off">
+                <input type="text" class="popup__input" placeholder="Ваше имя*" name="name" required autocomplete="off">
+                <input type="text" class="popup__input" placeholder="Номер телефона*" name="phone" required autocomplete="off">
+                <input type="text" class="popup__input" placeholder="Комменарий к звонку [желамое время звонка и т.п]" name="comment"  autocomplete="off">
+                <input type="submit" class="popup__btn" name="submit" value="ОСТАВИТЬ ЗАЯВКУ">
             </form>
+            <p class="success__p">Данные отправлены!</p>
+            <p class="sending__p">Отправляем ...</p>
             </div>
         </div>
     </div>
@@ -236,6 +243,6 @@
     </footer>
     
 
-    <script src="script.js"></script>
+    <script src="script/script.js"></script>
 </body>
 </html>
